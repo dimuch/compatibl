@@ -5,7 +5,7 @@ angular.module('myapp').directive('coloredcell', function() {
             data: "=",
             headerkeys: "="
         },
-        controller: ResultCtrl,
+        controller: 'ResultCtrl',
         templateUrl: 'directives/coloredCellTable/coloredCell.html'
     }
 });

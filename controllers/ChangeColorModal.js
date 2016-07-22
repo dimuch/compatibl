@@ -1,4 +1,4 @@
-function ChangeColorModal($scope, $uibModalInstance, rowData) {
+angular.module('myapp').controller('ChangeColorModal', function($scope, $uibModalInstance, rowData) {
     $scope.data = rowData;
 
     $scope.redValue = '125';
@@ -18,4 +18,4 @@ function ChangeColorModal($scope, $uibModalInstance, rowData) {
     $scope.cancel = function () {
         $uibModalInstance.dismiss('cancel');
     };
-};
+});

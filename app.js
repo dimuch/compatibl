@@ -10,6 +10,6 @@ angular.module('myapp', ["ui.router","ui.bootstrap"])
         .state('result', {
             url: '/result',
             templateUrl: 'templates/result.html',
-            controller: ResultCtrl
+            controller: 'ResultCtrl'
         });
 });

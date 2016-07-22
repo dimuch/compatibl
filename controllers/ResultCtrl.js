@@ -1,4 +1,4 @@
-function ResultCtrl( $scope, httpSrv,  $uibModal) {
+angular.module('myapp').controller('ResultCtrl', function($scope, httpSrv,  $uibModal) {
    httpSrv.get('data/data.json')
        .then(function (data) {
           $scope.data = data;
@@ -42,4 +42,4 @@ function ResultCtrl( $scope, httpSrv,  $uibModal) {
       });
 
    }
-};
+});

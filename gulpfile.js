@@ -38,5 +38,5 @@ gulp.task("dev", ["clean"], function(){
     // Отслеживаем изменения в файлах
     gulp.watch("less/**/*.less", ['less']);
 
-    gulp.watch(['./directives/*.js', './controllers/*.js', './service/*.js'], ['minify']);
+    gulp.watch(['./directives/**/*.js', './controllers/**/*.js', './service/**/*.js'], ['minify']);
 });

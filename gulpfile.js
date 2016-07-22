@@ -6,13 +6,7 @@ var gulp = require("gulp"),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
     concat = require("gulp-concat"),
-    browserify = require('browserify'),
-    gutil = require('gulp-util'),
-    del = require('del'),
-    ngAnnotate = require('browserify-ngannotate');
-
-var CacheBuster = require('gulp-cachebust');
-var cachebust = new CacheBuster();
+    del = require('del');
 
 //очистка build directory
 gulp.task("clean", function(){
@@ -20,20 +14,6 @@ gulp.task("clean", function(){
         "build/**/*"
     ])
 });
-
-// gulp.task('templateCache', function() {
-//
-//     var ngHtml2Js = require("gulp-ng-html2js"),
-//         concat = require("gulp-concat");
-//
-//     return gulp.src("./templates/*.html")
-//         .pipe(ngHtml2Js({
-//             moduleName: "todoPartials",
-//             prefix: "/partials/"
-//         }))
-//         .pipe(concat("templateCachePartials.js"))
-//         .pipe(gulp.dest("./build/html"));
-// });
 
 // css
 gulp.task("less", function() {
@@ -44,11 +24,10 @@ gulp.task("less", function() {
 
 // js minification
 gulp.task('minify', function(){
-   gulp.src(['./directives/*.js', './controllers/*.js', './service/*.js'])
+   gulp.src(['app.js', './directives/**/*.js', './controllers/**/*.js', './service/**/*.js'])
        .pipe(concat('all.js'))
        .pipe(gulp.dest('./build/js'))
-       .pipe(rename('all.min.js'))
-       .pipe(uglify())
+       .pipe(rename('app.min.js'))
        .pipe(gulp.dest('./build/js'));
 });
 

@@ -1,0 +1,26 @@
+{
+  "name": "test_1",
+  "authors": [
+    "dmytro kostylov <dmytro.kostylov@ironsrc.com>"
+  ],
+  "description": "test compatibl llc",
+  "main": "index.html",
+  "keywords": [
+    "test",
+    "angular1.5"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "vendor"
+  ],
+  "dependencies": {
+    "angular": "^1.5.7",
+    "vendor": "./vendor",
+    "bootstrap": "^3.3.6",
+    "gulp": "^3.9.1",
+    "angular-ui": "^0.4.0",
+    "angular-ui-router": "^0.3.1",
+    "angular-bootstrap": "^1.3.3"
+  }
+}

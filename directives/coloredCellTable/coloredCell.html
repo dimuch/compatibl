@@ -1,0 +1,22 @@
+<table>
+    <thead>
+        <tr>
+            <td ng-repeat="key in headerkeys">{{key}}</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr ng-repeat="row in data">
+            <td class="first-cell">
+                <span>{{row.colorName}}</span>
+                <span class="control-buttons">
+                    <span class="glyphicon glyphicon-plus" ng-click="updateTable($index, row, true)"></span>
+                    <span class="glyphicon glyphicon-minus" ng-click="updateTable($index, null, false)"></span>
+                    <span class="glyphicon glyphicon-pencil" ng-click="updateColor(row)"></span>
+                </span>
+            </td>
+            <td class="custom-text" style="background-color:{{row.hexValue}}">
+                <span>{{row.hexValue}}</span>
+            </td>
+        </tr>
+    </tbody>
+</table>

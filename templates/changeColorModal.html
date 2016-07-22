@@ -1,0 +1,44 @@
+<div class="modal-header">
+    <h3 class="modal-title">Change color dialog</h3>
+</div>
+<div class="modal-body">
+    <div class="row">
+        <h4 class="col-md-6  col-sm-6 col-xs-6">Current color</h4>
+        <div class="col-md-6 col-sm-6 col-xs-6" style="background-color: {{data.hexValue}}; max-width: 150px; height: 30px;"></div>
+    </div>
+    <hr>
+    <form>
+        <div class="row">
+            <h4 class="col-md-12">New color</h4>
+        </div>
+        <div class="row form-group">
+            <div class="col-md-4 col-sm-4 col-xs-4 text-center"> red </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 text-center"> green </div>
+            <div class="col-md-4 col-sm-4 col-xs-4 text-center"> blue </div>
+        </div>
+        <div class="row form-group">
+            <div class="form-group col-md-4 col-sm-4 col-xs-4 text-center">
+                <input ng-model="redValue" ng-change="updateColor(redValue,greenValue,blueValue)"  type="range" id="slideRed" min="0" max="255">
+                <label for="slideRed">{{redValue}}</label>
+            </div>
+            <div class="form-group  col-md-4 col-sm-4 col-xs-4 text-center">
+                <input ng-model="greenValue" ng-change="updateColor(redValue,greenValue,blueValue)" type="range" id="slideGreen" min="0" max="255">
+                <label for="slideGreen">{{greenValue}}</label>
+            </div>
+            <div class="form-group col-md-4 col-sm-4 col-xs-4 text-center">
+                <input ng-model="blueValue"  ng-change="updateColor(redValue,greenValue,blueValue)" type="range" id="slideBlue" min="0" max="255">
+                <label for="slideBlue">{{blueValue}}</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-md-12 col-sm-12 col-xs-12">
+                <div id="result" style="height: 30px; border: 1px solid darkcyan; background-color: rgba({{newColor}}, 1);"></div>
+            </div>
+            <label class="col-md-12 col-sm-12 col-xs-12 text-center" for="result">{{newColor}}</label>
+        </div>
+    </form>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="ok()">Set new color</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>

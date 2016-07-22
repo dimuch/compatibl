@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html ng-app="myapp">
+
+<head>
+  <title>Test</title>
+  <!-- Bootstrap CSS -->
+  <link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <!-- Custom Styles -->
+  <link href="build/css/app.css" rel="stylesheet">
+</head>
+
+<body class="container">
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">
+          <img src="assets/clLogo.svg">
+        </a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li ui-sref-active="active"><a ui-sref="index">Test description</a></li>
+          <li ui-sref-active="active"><a ui-sref="result">Test result</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div ui-view> </div>
+  
+  <!-- Angular -->
+  <script src="vendor/angular/angular.js"></script>
+  <!-- UI-Router -->
+  <script src="vendor/angular-ui-router/release/angular-ui-router.js"></script>
+  <!-- Angular Bootstrap -->
+  <script src="vendor/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+  <!-- App Script -->
+  <script src="app.js"></script>
+
+  <script src="service/httpWrapper.js"></script>
+  <script src="directives/coloredCellTable/coloredCell.js"></script>
+
+  <script src="controllers/ChangeColorModal.js"></script>
+  <script src="controllers/ResultCtrl.js"></script>
+
+</body>
+
+</html>

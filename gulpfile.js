@@ -6,6 +6,7 @@ var gulp = require("gulp"),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify'),
     concat = require("gulp-concat"),
+    ngAnnotate = require('gulp-ng-annotate'),
     del = require('del');
 
 //очистка build directory
@@ -23,13 +24,21 @@ gulp.task("less", function() {
 });
 
 // js minification
-gulp.task('minify', function(){
-   gulp.src(['app.js', './directives/**/*.js', './controllers/**/*.js', './service/**/*.js'])
-       .pipe(concat('all.js'))
-       .pipe(gulp.dest('./build/js'))
-       .pipe(rename('app.min.js'))
-       .pipe(gulp.dest('./build/js'));
+gulp.task('minify', function() {
+    return gulp.src(['app.js', './directives/**/*.js', './controllers/**/*.js', './service/**/*.js'])
+    .pipe(concat('all.js'))
+    .pipe(ngAnnotate())
+    .pipe(gulp.dest('build/js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('build/js'))
 });
+
+// //vendor js
+// gulp.task('minifyVendor', function(){
+//     gulp.src(['./vendor/angular*/*.js'])
+//         .pipe(concat('vendor.js'))
+//         .pipe(gulp.dest('./build/js'))
+// });
 
 // Действия по умолчанию
 gulp.task("dev", ["clean"], function(){

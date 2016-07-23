@@ -1,7 +1,7 @@
 {
   "name": "test_1",
   "version": "1.0.0",
-  "description": "",
+  "description": "test compatibl llc",
   "main": "app.js",
   "dependencies": {},
   "devDependencies": {
@@ -18,6 +18,17 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dimuch/compatibl.git"
+  },
+  "keywords": [
+    "test"
+  ],
+  "author": "dmytro.kostylov@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimuch/compatibl/issues"
+  },
+  "homepage": "https://github.com/dimuch/compatibl#readme"
 }

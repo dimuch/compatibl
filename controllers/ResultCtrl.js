@@ -1,9 +1,16 @@
-angular.module('myapp').controller('ResultCtrl', function($scope, httpSrv,  $uibModal) {
-   httpSrv.get('data/data.json')
-       .then(function (data) {
-          $scope.data = data;
-          $scope.headerkeys = Object.keys($scope.data[0]);
-       });
+angular.module('myapp').controller('ResultCtrl', function($rootScope, $scope, httpSrv,  $uibModal) {
+   $scope.default = {
+      colorName: "default",
+      hexValue: "#fff"
+   };
+   if (!$rootScope.data){
+      httpSrv.get('data/data.json')
+         .then(function (data) {
+            $scope.data = data;
+            $scope.headerkeys = Object.keys($scope.data[0]);
+            $rootScope.data = data;
+         });
+   }
 
    $scope.updateTable = function (index, data, addDelete) {
       var newRow;
@@ -15,7 +22,7 @@ angular.module('myapp').controller('ResultCtrl', function($scope, httpSrv,  $uib
          $scope.data.splice(index, 0, newRow);
          return false;
       }
-      $scope.data.splice(index, 1);
+      ($scope.data.length > 0) && $scope.data.splice(index, 1);
 
    };
    $scope.updateColor = function (data) {

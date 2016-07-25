@@ -18,5 +18,18 @@
                 <span>{{row.hexValue}}</span>
             </td>
         </tr>
+        <tr ng-show="(data.length === 0)">
+            <td colspan="2" class="first-cell">
+                <span>Ups, no items</span>
+                <span class="control-buttons">
+                    <span class="glyphicon glyphicon-plus" ng-click="updateTable($index, default, true)"></span>
+                    <span ng-hide="(data.length === 0)" class="glyphicon glyphicon-minus" ng-click="updateTable($index, null, false)"></span>
+                    <span class="glyphicon glyphicon-pencil" ng-click="updateColor(row)"></span>
+                </span>
+            </td>
+            <!--<td class="custom-text" style="background-color:#fff;">-->
+                <!--<span style="color:#000;">#fff</span>-->
+            <!--</td>-->
+        </tr>
     </tbody>
 </table>

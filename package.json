@@ -4,11 +4,11 @@
   "description": "test compatibl llc",
   "main": "app.js",
   "dependencies": {
-    "minimatch": "^3.0.2",
-    "graceful-fs": "^4.0.0",
-    "lodash": "^4.0.0"
   },
   "devDependencies": {
+    "minimatch": "^3.0.2",
+    "graceful-fs": "^4.0.0",
+    "lodash": "^4.0.0",
     "del": "^2.2.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.0",

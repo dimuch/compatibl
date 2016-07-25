@@ -3,13 +3,18 @@ angular.module('myapp').controller('ResultCtrl', function($rootScope, $scope, ht
       colorName: "default",
       hexValue: "#fff"
    };
+   debugger
    if (!$rootScope.data){
       httpSrv.get('data/data.json')
          .then(function (data) {
             $scope.data = data;
             $scope.headerkeys = Object.keys($scope.data[0]);
-            $rootScope.data = data;
+            $rootScope.keys = $scope.headerkeys;
+            $rootScope.data = $scope.data; //just to remember state, if not db
          });
+   } else {
+      $scope.data = $rootScope.data;
+      $scope.headerkeys = $rootScope.keys;
    }
 
    $scope.updateTable = function (index, data, addDelete) {

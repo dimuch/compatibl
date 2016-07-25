@@ -37,26 +37,27 @@ h1 {
     }
   }
 }
+.main {
+  position: relative;
+  overflow-x: hidden;
+  min-height: 400px;
+  max-width: 100%;
+}
+.animated {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+}
+.app-content{
+    position: absolute;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    margin: auto;
+    overflow-x: hidden;
+  &.ng-enter {
+    display: block;
+  }
 
-//
-//.custom-red	{
-//  background-color: #f00;
-//}
-//.custom-green{
-//  background-color: #0f0;
-//}
-//.custom-blue{
-//  background-color: #00f;
-//}
-//.custom-cyan{
-//  background-color: #0ff;
-//}
-//.custom-magenta{
-//  background-color: #f0f;
-//}
-//.custom-yellow{
-//  background-color: #ff0;
-//}
-//.custom-black{
-//  background-color: #000;
-//}
+  &.ng-leave {
+    display: none;
+  }
+}

@@ -28,7 +28,7 @@ angular.module('myapp').controller('ResultCtrl', function($scope, httpSrv,  $uib
             }
          }
       });
-
+      
       modalInstance.result.then(function (rowData) {
          var rgbColors = rowData.split(",");
          var result = rgbColors.map(function(item){

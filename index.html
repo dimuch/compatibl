@@ -3,9 +3,9 @@
 
 <head>
   <title>Test</title>
-  <!-- Bootstrap CSS -->
-  <link href="vendor/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <!-- Vendor CSS -->
+  <link href="build/css/vendor.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="build/images/favicon.png">
   <!-- Custom Styles -->
   <link href="build/css/app.css" rel="stylesheet">
 </head>
@@ -22,7 +22,7 @@
           <span class="icon-bar"></span>
         </button>
         <a class="navbar-brand" href="#">
-          <img src="assets/clLogo.svg">
+          <img src="build/images/clLogo.svg">
         </a>
       </div>
       <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -34,7 +34,9 @@
     </div>
   </nav>
   
-  <div ui-view> </div>
+  <div class="main">
+    <div ui-view class="app-content animated slideInLeft"></div>
+  </div>
 
    <!--Vendor-->
   <script src="build/js/vendor.js"></script>

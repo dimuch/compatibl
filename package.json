@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "test compatibl llc",
   "main": "app.js",
-  "dependencies": {},
+  "dependencies": {
+    "minimatch": "^3.0.2",
+    "graceful-fs": "^4.0.0",
+    "lodash": "^4.0.0"
+  },
   "devDependencies": {
     "del": "^2.2.1",
     "gulp": "^3.9.1",
@@ -12,6 +16,7 @@
     "gulp-minify": "0.0.13",
     "gulp-ng-annotate": "^2.0.0",
     "gulp-rename": "^1.2.2",
+    "gulp-cssnano": "^2.1.2",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-uglify": "^1.5.4"
   },
